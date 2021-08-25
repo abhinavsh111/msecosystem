@@ -1,0 +1,17 @@
+server:
+  port: 9296
+
+management.endpoints.web.exposure.include: '*'
+management.endpoint.health.show-details: always
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/abhinavsh111/msecosystem-config-server
+          default-label: main
+          clone-on-start: true
+          skipSslValidation: true
